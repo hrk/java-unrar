@@ -14,7 +14,7 @@ import java.util.Collections;
 import java.util.Set;
 
 import org.apache.tika.exception.TikaException;
-import org.apache.tika.extractor.EmbeddedDocumentExtractor;
+import org.apache.tika.extractor.ParsingEmbeddedDocumentExtractor;
 import org.apache.tika.io.TikaInputStream;
 import org.apache.tika.metadata.Metadata;
 import org.apache.tika.mime.MediaType;
@@ -41,8 +41,8 @@ public class RARParser implements Parser {
             InputStream stream, ContentHandler handler,
             Metadata metadata, ParseContext context)
             throws SAXException, IOException, TikaException {
-        EmbeddedDocumentExtractor extractor =
-            new EmbeddedDocumentExtractor(context);
+        ParsingEmbeddedDocumentExtractor extractor =
+            new ParsingEmbeddedDocumentExtractor(context);
 
         try {
             File file = TikaInputStream.get(stream).getFile();
