@@ -29,6 +29,7 @@ import de.innosystec.unrar.exception.RarException;
 import de.innosystec.unrar.rarfile.FileHeader;
 
 public class RARParser implements Parser {
+    private static final long serialVersionUID = 1L;
 
     private static final MediaType TYPE =
         MediaType.application("x-rar-compressed");
@@ -62,6 +63,7 @@ public class RARParser implements Parser {
                 }
             }
             xhtml.endDocument();
+            archive.close();
         } catch (RarException e) {
             throw new TikaException("Unable to parse a RAR archive", e);
         }

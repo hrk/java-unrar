@@ -25,7 +25,8 @@ package de.innosystec.unrar.exception;
  */
 public class RarException extends Exception
 {
-	
+	private static final long serialVersionUID = 1L;
+
 	private RarExceptionType type;
 	
 	public RarException(Exception e){
